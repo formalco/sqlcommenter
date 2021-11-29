@@ -34,5 +34,5 @@ setup(
     long_description_content_type='text/markdown',
     license='BSD',
     keywords='postgresql sql database',
-    url='https://github.com/formalco/formal-pg-sdk',
+    url='https://github.com/formalco/formal-sqlcommenter',
 )
