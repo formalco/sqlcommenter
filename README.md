@@ -9,7 +9,7 @@ Python module for popular projects that want to add an external ID to your Forma
 ## Local Install
 
 ```shell
-pip3 install --user google-cloud-sqlcommenter
+pip3 install --user formal-sqlcommenter
 ```
 
 ## Usage
