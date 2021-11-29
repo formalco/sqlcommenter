@@ -23,10 +23,10 @@ Use the provided cursor factory to generate database cursors. All queries execut
 import psycopg2
 from formal.sqlcommenter.psycopg2.extension import CommenterCursorFactory
 
-cursor_factory = CommenterCursorFactory('1234')
+cursor_factory = CommenterCursorFactory()
 conn = psycopg2.connect(..., cursor_factory=cursor_factory)
 cursor = conn.cursor()
-cursor.execute(...) # comment will be added before execution
+cursor.execute('SELECT * from ...', '1234') # comment will be added before execution
 ```
 
 which will produce a backend log such as when viewed on Postgresql
