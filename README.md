@@ -2,7 +2,8 @@
 
 # Formal sqlcommenter
 
-Python module for popular projects that want to add an external ID to your Formal logs.
+Formal sqlcommenter is a plugin that enables your ORMs to augment SQL statement before execution, with a comment containing the end-user id of a request.
+Sqlcommenter is typically useful for back-office application that needs to implement role access management.
 
  * [Psycopg2](#psycopg2)
 
