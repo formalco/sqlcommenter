@@ -1,4 +1,12 @@
+import os
+
 from setuptools import find_packages, setup
+
+
+def read_file(filename):
+    with open(os.path.join(os.path.dirname(__file__), filename)) as file:
+        return file.read()
+
 
 setup(
     name='formal-sqlcommenter',
@@ -22,6 +30,8 @@ setup(
         'Topic :: Utilities',
     ],
     description='Formal sql commenter',
+    long_description=read_file('README.md'),
+    long_description_content_type='text/markdown',
     license='BSD',
     keywords='postgresql sql database',
     url='https://github.com/formalco/formal-pg-sdk',
