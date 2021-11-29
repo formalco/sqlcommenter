@@ -10,7 +10,7 @@ def read_file(filename):
 
 setup(
     name='formal-sqlcommenter',
-    version='1.0.0',
+    version='1.0.1',
     packages=find_packages(exclude=['tests']),
     extras_require={
         'psycopg2': ['psycopg2'],
