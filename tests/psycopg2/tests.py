@@ -30,9 +30,9 @@ class Psycopg2TestCase(TestCase):
             pass
         mocked_execute = mock.create_autospec(execute, return_value=endUserID)
         curse(psycopg2.extensions.cursor, 'execute', mocked_execute)
-        cursor = CommenterCursorFactory(endUserID)
+        cursor = CommenterCursorFactory()
         self.assertIn(cursor.execute(
-            None, 'SELECT 1;'), endUserID)
+            None, 'SELECT 1;', endUserID), endUserID)
         if (endUserID == ""):
             mocked_execute.assert_called_with(
                 None, sql, None)
