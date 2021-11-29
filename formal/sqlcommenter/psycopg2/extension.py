@@ -21,10 +21,10 @@ import logging
 
 # This integration extends psycopg2.extensions.cursor
 # by implementing a custom execute method.
-def CommenterCursorFactory(endUserID=""):
+def CommenterCursorFactory():
 
     class CommenterCursor(psycopg2.extensions.cursor):
-        def execute(self, sql, args=None):
+        def execute(self, sql, endUserID="", args=None):
             sql += generate_sql_comment(endUserID)
 
             return psycopg2.extensions.cursor.execute(self, sql, args)
