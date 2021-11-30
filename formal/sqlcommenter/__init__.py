@@ -18,7 +18,7 @@ def generate_sql_comment(endUserID):
     """
     Return a SQL comment with endUserID
     """
-    if endUserID != '':  # No entries added.
+    if endUserID == '':  # No entries added.
         return ''
 
     # Sort the keywords to ensure that caching works and that testing is
