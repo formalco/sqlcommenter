@@ -23,4 +23,4 @@ def generate_sql_comment(endUserID):
 
     # Sort the keywords to ensure that caching works and that testing is
     # deterministic. It eases visual inspection as well.
-    return ' /*--formal_role_id: {0}*/;'.format(endUserID)
+    return '/*formal_role_id:{0}*/ '.format(endUserID)

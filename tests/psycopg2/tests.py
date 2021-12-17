@@ -38,7 +38,7 @@ class Psycopg2TestCase(TestCase):
                 None, sql, None)
         else:
             mocked_execute.assert_called_with(
-                None, sql + " /*--formal_role_id: {0} */".format(endUserID), None)
+                None, "/*formal_role_id:{0}*/ ".format(endUserID) + sql, None)
 
 
 class Tests(Psycopg2TestCase):

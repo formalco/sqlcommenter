@@ -26,4 +26,4 @@ class GenerateSqlCommentTests(TestCase):
         self.assertEqual(generate_sql_comment(), '')
 
     def test_end_comment_escaping(self):
-        self.assertIn('--formal_role_id: 1234', generate_sql_comment('1234'))
+        self.assertIn('formal_role_id:1234', generate_sql_comment('1234'))

@@ -25,8 +25,7 @@ def CommenterCursorFactory():
 
     class CommenterCursor(psycopg2.extensions.cursor):
         def execute(self, sql, endUserID="", args=None):
-            sql += generate_sql_comment(endUserID)
-
+            sql = generate_sql_comment(endUserID) + sql
             return psycopg2.extensions.cursor.execute(self, sql, args)
 
     return CommenterCursor
