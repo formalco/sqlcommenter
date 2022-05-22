@@ -10,10 +10,11 @@ def read_file(filename):
 
 setup(
     name='formal-sqlcommenter',
-    version='1.0.6',
+    version='1.0.7',
     packages=find_packages(exclude=['tests']),
     extras_require={
         'psycopg2': ['psycopg2'],
+        'django':   ['django'],
     },
     author='Formal',
     author_email='hello@joinformal.com',

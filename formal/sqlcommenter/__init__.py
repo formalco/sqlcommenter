@@ -18,9 +18,7 @@ def generate_sql_comment(endUserID):
     """
     Return a SQL comment with endUserID
     """
-    if endUserID == '':  # No entries added.
+    if endUserID == '' or endUserID == None:  # No entries added.
         return ''
 
-    # Sort the keywords to ensure that caching works and that testing is
-    # deterministic. It eases visual inspection as well.
     return '/*formal_role_id:{0}*/ '.format(endUserID)
