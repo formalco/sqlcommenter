@@ -51,10 +51,10 @@ class QueryWrapper:
                 else:
                     endUserId = self.request.user.id
 
-            # Check for override
-            # endUserIdKey = "formalEndUserId"
-            # if endUserIdKey in context:
-            #     endUserId = context[endUserIdKey]
+            # Check for override w context
+            endUserIdKey = "formalEndUserId"
+            if endUserIdKey in context:
+                endUserId = context[endUserIdKey]
 
             sql = generate_sql_comment(endUserId) + sql
         return execute(sql, params, many, context)
