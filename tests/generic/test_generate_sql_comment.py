@@ -26,4 +26,6 @@ class GenerateSqlCommentTests(TestCase):
         self.assertEqual(generate_sql_comment(''), '')
 
     def test_end_comment_escaping(self):
-        self.assertIn('formal_role_id:1234', generate_sql_comment('1234'))
+        self.assertEqual('/*formal_role_id:1234*/ ', generate_sql_comment('1234'))
+        self.assertEqual('/*formal_role_id:%%2A/abc*/ ', generate_sql_comment('*/abc'))
+        self.assertEqual('/*formal_role_id:%%2A/%%20SELECT%%20%%2A*/ ', generate_sql_comment('*/ SELECT *'))
